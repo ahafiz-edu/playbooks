@@ -1,0 +1,14 @@
+---
+- name: install and run vsftpd
+  hosts: ansible
+  become: yes
+  tasks:
+   - name: install vsftpd
+     ansible.builtin.dnf:
+      name: vsftpd
+      state: latest
+   - name: start and enable service
+     ansible.builtin.service:
+      name: vsftpd
+      state: restarted
+      enabled: yes
