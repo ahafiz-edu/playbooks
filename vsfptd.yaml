@@ -10,5 +10,5 @@
    - name: start and enable service
      ansible.builtin.service:
       name: vsftpd
-      state: enabled
+      state: restarted
       enabled: yes
